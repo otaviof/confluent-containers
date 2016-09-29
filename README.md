@@ -9,6 +9,6 @@ Service ports listening on `localhost`:
 
 - 2181: Zookeeper;
 - 8082: Rest-Proxy (Kafka-Rest);
-- 9021: Contro Center;
+- 9021: Control Center;
 - 9092: Kafka;
 - 18081: Schema Registry;
