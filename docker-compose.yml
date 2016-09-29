@@ -22,7 +22,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://127.0.0.1:9092
 
   rest-proxy:
     image: confluentinc/cp-kafka-rest:latest
@@ -62,3 +62,4 @@ services:
       CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2181
       CONTROL_CENTER_BOOTSTRAP_SERVERS: kafka:9092
       CONTROL_CENTER_REPLICATION_FACTOR: 1
+      CONTROL_CENTER_CONNECT_CLUSTER: http://localhost:8082
