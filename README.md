@@ -1,4 +1,4 @@
-# Confluent v`3.0.1` Containeres
+# Confluent `v3.0.1` Containeres
 
 ``` bash
 docker-compose up
@@ -12,3 +12,6 @@ Service ports listening on `localhost`:
 - 9021: Control Center;
 - 9092: Kafka;
 - 18081: Schema Registry;
+
+For more containers, have a look on [ConfluentInc](https://hub.docker.com/u/confluentinc) at Docker Hub.
+
