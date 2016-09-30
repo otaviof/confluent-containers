@@ -3,7 +3,7 @@ version: '2'
 
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:3.0.E
+    image: confluentinc/cp-zookeeper:3.0.1
     ports:
       - 2181:2181
     environment:
