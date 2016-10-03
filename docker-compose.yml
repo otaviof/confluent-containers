@@ -5,10 +5,10 @@ services:
   zookeeper:
     image: confluentinc/cp-zookeeper:3.0.1
     ports:
-      - 2181:2181
+      - 2182:2181
     environment:
       ZOOKEEPER_SERVER_ID: 1
-      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_CLIENT_PORT: 2182
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka:
@@ -21,7 +21,7 @@ services:
       - 9092:9092
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2182
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
 
   schemaregistry:
@@ -36,7 +36,7 @@ services:
       - zookeeper
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schemaregistry
-      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2182
       SCHEMA_REGISTRY_SECURITY_PROTOCOL: PLAINTEXT
       SCHEMA_REGISTRY_KAFKASTORE_TOPIC: _schemas
 
@@ -54,7 +54,7 @@ services:
       - schemaregistry
     environment:
       KAFKA_REST_HOST_NAME: restproxy
-      KAFKA_REST_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_REST_ZOOKEEPER_CONNECT: zookeeper:2182
       KAFKA_REST_REGISTRY_URL: http://schemaregistry:18081
 
   control-center:
@@ -68,8 +68,8 @@ services:
       - zookeeper
       - kafka
     environment:
-      CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONTROL_CENTER_ZOOKEEPER_CONNECT: zookeeper:2182
       CONTROL_CENTER_BOOTSTRAP_SERVERS: kafka:9092
-      CONTROL_CENTER_REPLICATION_FACTOR: 0
+      CONTROL_CENTER_REPLICATION_FACTOR: 1
 
 # EOF

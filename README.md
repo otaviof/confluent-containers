@@ -15,4 +15,4 @@ Service ports listening on `localhost`:
 | 9092     | Kafka                   |
 | 18081    | Schema Registry         |
 
-For more containers, have a look on [ConfluentInc](https://hub.docker.com/u/confluentinc) at Docker Hub.
+For more containers, have a look on [ConfluentInc](https://hub.docker.com/u/confluentinc) at Docker Hub and [Github](https://github.com/confluentinc/cp-docker-images).
